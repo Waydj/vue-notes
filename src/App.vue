@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import TopBar from './components/common/TopBar.vue';
+</script>
 
 <template>
-  <h1>vue notes</h1>
+  <div class="nf__notes-wrapper">
+    <TopBar />
+  </div>
 </template>
 
 <style scoped></style>
