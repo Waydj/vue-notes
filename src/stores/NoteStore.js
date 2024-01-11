@@ -37,5 +37,26 @@ export const useAppStore = defineStore("app", {
     allNotes: (state) => state.notes,
     pinnedNotes: (state) => state.notes.filter((note) => note.pinned),
   },
-  actions: {},
+  actions: {
+    addToPinned(id) {
+      const updatedNotes = this.notes.map((note) => {
+        if (note.id === id) {
+          note.pinned = true;
+        }
+        return note;
+      });
+
+      this.notes = updatedNotes;
+    },
+    removeFromPinned(id) {
+      const updatedNotes = this.notes.map((note) => {
+        if (note.id === id) {
+          note.pinned = false;
+        }
+        return note;
+      });
+
+      this.notes = updatedNotes;
+    },
+  },
 });
